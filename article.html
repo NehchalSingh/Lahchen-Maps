@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Where a Child Lives · Lahchen Maps</title>
-<meta name="description" content="In India, where a child lives shapes their chance of being stunted almost as much as how poor their family is.">
+<meta name="description" content="A stunting map is not a map of height. It is a map of which childhoods a place protects and which it does not.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -33,7 +33,7 @@
   .nav-links a{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink-soft);padding-bottom:2px;border-bottom:1px solid transparent;transition:.2s}
   .nav-links a:hover,.nav-links a.active{color:var(--oxblood);border-color:var(--oxblood)}
 
-  .ahead{max-width:var(--read);margin:0 auto;padding:60px 24px 26px}
+  .ahead{max-width:var(--read);margin:0 auto;padding:60px 24px 10px}
   .ahead .tags{display:flex;gap:8px;margin-bottom:20px}
   .ahead .tags span{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--paper);background:var(--ink);padding:3px 8px;border-radius:2px}
   .ahead .tags span.ox{background:var(--oxblood)}
@@ -41,6 +41,11 @@
   .ahead .standfirst{margin-top:20px;font-size:22px;line-height:1.5;color:var(--ink-soft);font-style:italic}
   .ahead .byline{margin-top:24px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);letter-spacing:0.05em;display:flex;gap:12px}
   .ahead .byline .s{color:var(--rule)}
+
+  .abstract{max-width:var(--read);margin:0 auto;padding:14px 24px 6px}
+  .abstract p{font-size:19.5px;line-height:1.7;color:#222e3c;margin:16px 0}
+  .abstract p:first-child{font-size:21px}
+  .abstract .who{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-soft);vertical-align:super}
 
   .figure{max-width:var(--wide);margin:30px auto;padding:0 24px}
   .figure figure{border:1px solid var(--ink);background:var(--paper-deep);box-shadow:8px 8px 0 rgba(27,42,58,0.10)}
@@ -90,91 +95,98 @@
   <div class="ahead">
     <div class="tags"><span class="ox">nutrition</span><span>india</span><span>nfhs-5</span></div>
     <h1>Where a Child Lives</h1>
-    <p class="standfirst">In India, where a child is born shapes their chance of being stunted almost as much as how poor their family is — and the data says so plainly.</p>
+    <p class="standfirst">Where a child is born shapes their odds of being stunted almost as much as how poor their family is.</p>
     <div class="byline"><span>Nehchal Singh</span><span class="s">·</span><span>2026</span><span class="s">·</span><span>8 min</span></div>
   </div>
 
-  <!-- ===== FIGURE 1 — overall stunting ===== -->
+  <div class="abstract">
+    <p>Stunting, being more than two standard deviations below the World Health Organization's median height for a child's age, is one of the most consequential measures in development. It is the body keeping score of everything that went wrong early: too little food, too much illness, too little of the conditions a child needs to grow. And what it costs is not recovered. Stunted children carry the deficit forward into weaker cognitive and physical development, lower productivity, and worse health across their whole lives.<span class="who">WHO</span></p>
+    <p>So a stunting map is not really a map of height. It is a map of which childhoods a place protects and which it does not. India's tells a strange story when you read it closely: prosperity predicts the broad pattern but misses the most interesting states, the penalty of being born poor swings from almost nothing to nearly fifty points depending on where you are, and even the richest children are not reliably spared. Four cuts of the same survey, one conclusion.</p>
+  </div>
+
+  <!-- ===== FIGURE 1 overall stunting ===== -->
   <div class="figure">
     <figure>
       <img src="fig1_stunting_map.png" alt="Map of child stunting rates across Indian states, NFHS-5">
-      <figcaption>fig. 1 — share of children under 5 who are stunted, by state. The 10 highest-stunting states are labelled in red, the 10 lowest in green.</figcaption>
+      <figcaption>fig. 1: share of children under 5 who are stunted, by state. The 10 highest-stunting states are labelled in red, the 10 lowest in green.</figcaption>
     </figure>
   </div>
 
   <div class="read">
-    <p>Stunting — a child too short for their age — is the clearest single marker of early-life deprivation. It is not the result of one bad month but of years: inadequate nutrition, repeated infection, poor sanitation, and the conditions a child is born into. In India's most recent National Family Health Survey, the national rate sits around a third of all children under five. The map above shows how little that single number tells you.</p>
-    <p>The spread is more than twofold. At the low end, Tamil Nadu and Sikkim sit near 20 to 22 percent, with Kerala close behind at 23. At the high end, Meghalaya reaches 47 percent, Bihar 43, and Jharkhand and Uttar Pradesh both 40. A child in Meghalaya is more than twice as likely to be stunted as a child in Tamil Nadu. Same country, same survey, same year — and a difference that large.</p>
-    <p>What's striking is that the map does not divide neatly into rich and poor regions. Gujarat — among India's wealthier states — records 39 percent, higher than far poorer states. The far south and the small northeastern states like Sikkim do well; the central and eastern belt does badly. Geography, not just income, is written all over this map.</p>
+    <h2><span class="num">01</span>The outcome</h2>
+    <p>The figures here come from the National Family Health Survey, round five (NFHS-5), the most recent nationwide round available and the standard source for these numbers; it was collected across 2019 to 2021, so the picture is as current as the data allows. In it, the national stunting rate sits around a third of all children under five. Getting to that number cleanly takes some care, and the choices matter. Each child's height-for-age score carries special survey codes for measurements that were missing or never taken, so those were set aside rather than treated as real values, which would otherwise have dragged the average toward nonsense. A second filter removed biologically impossible scores, anything beyond six standard deviations from the reference median, since a child that far out almost always reflects a recording error rather than a real child. And every child was weighted by the survey's own sampling weights, so that groups the survey deliberately oversampled do not distort the national picture. With those three steps, the rate lands almost exactly on the official published figure, which is the reassurance that the pipeline is sound.</p>
+    <p>The map shows how little that single national number tells you. The spread is more than twofold. At the low end, Tamil Nadu and Sikkim sit near 20 to 22 percent, with Kerala close behind at 23. At the high end, Meghalaya reaches 47 percent, Bihar 43, and Jharkhand and Uttar Pradesh both 40. A child in Meghalaya is more than twice as likely to be stunted as a child in Tamil Nadu. Same country, same survey, same year, and a difference that large.</p>
+    <p>What stands out is that the map does not divide neatly into rich and poor regions. Gujarat, among India's wealthier states, records 39 percent, higher than far poorer states. The far south and the small northeastern states like Sikkim do well; the central and eastern belt does badly. Geography, not just income, is written across this map.</p>
 
-    <p class="pull">A child in Meghalaya is more than twice as likely to be stunted as one in Tamil Nadu — same country, same year.</p>
+    <p class="pull">A child in Meghalaya is more than twice as likely to be stunted as one in Tamil Nadu, in the same country and the same year.</p>
 
-    <h2><span class="num">02</span>Income explains part of it — but Gujarat breaks the rule</h2>
-    <p>If prosperity were the whole answer, plotting each state's economic output against its stunting rate would give a tidy downward line: richer states, fewer stunted children. The next chart does broadly slope that way — but the scatter around the line is the real story.</p>
+    <h2><span class="num">02</span>Income explains part of it, but Gujarat breaks the rule</h2>
+    <p>If prosperity were the whole answer, plotting each state's economic output against its stunting rate would give a tidy downward line: richer states, fewer stunted children. The next chart does broadly slope that way, but the scatter around the line is the real story.</p>
   </div>
 
-  <!-- ===== FIGURE 6 — prosperity vs nutrition ===== -->
+  <!-- ===== FIGURE 6 prosperity vs nutrition ===== -->
   <div class="figure">
     <figure>
       <img src="fig6_scatter.png" alt="Scatter plot of state economic output per person versus child stunting rate, with descriptive trend line">
-      <figcaption>fig. 2 — each dot is a state: economic output per person (horizontal) against child stunting (vertical). The dashed line is the average trend; states below it have less stunting than the trend, states above it more.</figcaption>
+      <figcaption>fig. 2: each dot is a state: economic output per person (horizontal) against child stunting (vertical). The dashed line is the average trend; states below it have less stunting than the trend, states above it more.</figcaption>
     </figure>
   </div>
 
   <div class="read">
-    <p>Bihar sits exactly where you'd expect: very low income, very high stunting, near the top-left corner. But the interesting states are the ones far off the line. Gujarat is the clearest: a relatively prosperous state with output per person well above the middle of the pack, yet it carries 39 percent stunting — sitting high above the trend line, doing far worse than its economy predicts. Punjab tells a milder version of the same story.</p>
-    <p>Below the line sit the over-performers — states getting more nutrition out of their economic hand than expected. Kerala, Manipur, and Puducherry all land there, with stunting well under what their income would suggest. And at the far right, the high-output outliers Goa and Sikkim sit low, around 22 to 26 percent — though their per-person output figures flatter them, since a small population dividing a concentrated economic base inflates the number without making the average household rich.</p>
-    <p>The lesson is not that income doesn't matter — it clearly sets a tendency. It is that the tendency is loose enough to leave Gujarat and Kerala, at similar levels of prosperity, on opposite sides of the line. Something other than money is doing the work.</p>
+    <p>A word on what that line is, because it is easy to over-read. It is an ordinary least-squares fit across roughly thirty states, drawn purely as a descriptive benchmark, not a causal estimate. It answers one modest question, namely how stunting tends to move with income on average, so that we can see which states sit above or below that tendency. It is deliberately not a claim that raising income by some amount would lower stunting by some amount, and with only about thirty points the line is a loose summary that a couple of outliers can tilt. Read it as a reference line, nothing more.</p>
+    <p>Bihar sits exactly where you would expect, very low income and very high stunting, near the top-left corner. The interesting states are the ones far off the line. Gujarat is the clearest case: a relatively prosperous state with output per person well above the middle of the pack, yet carrying 39 percent stunting, sitting high above the line, doing far worse than its economy would predict. Punjab tells a milder version of the same story. Below the line sit the over-performers, states getting more nutrition out of their economic hand than expected: Kerala, Manipur, and Puducherry all land there.</p>
+    <p>The income measure itself needs an honest label. The horizontal axis is state output per person, not household income. Households do not earn a state's domestic product, and the figure is distorted for small states with concentrated economies: Goa and Sikkim look extraordinarily rich because a small population divides an outsized output, which inflates the number without making the average family wealthy. So their low stunting at the far right should be read with that caveat in mind, and the axis is named for output rather than income to keep the claim honest. The lesson is not that income does not matter, since it clearly sets a tendency. It is that the tendency is loose enough to leave Gujarat and Kerala, at similar prosperity, on opposite sides of the line. Something other than money is doing the work.</p>
 
     <h2><span class="num">03</span>Within states, poverty bites very unevenly</h2>
-    <p>The next cut goes inside each state, comparing the stunting rate of the poorest fifth of households with the richest fifth. If poverty were uniformly punishing, this gap would be roughly constant. It is not — it ranges from essentially nothing to nearly fifty percentage points.</p>
+    <p>The next cut goes inside each state, comparing the stunting rate of the poorest fifth of households with the richest fifth. If poverty were uniformly punishing, this gap would be roughly constant. It is not. It ranges from essentially nothing to nearly fifty percentage points.</p>
   </div>
 
   <!-- ===== FIGURE 3 (wealth gap) ===== -->
   <div class="figure">
     <figure>
       <img src="fig2_gap_map.png" alt="Map of the gap in child stunting between the poorest and richest fifths of households, by state">
-      <figcaption>fig. 3 — the gap between the poorest and richest fifths of households, in percentage points. Darker = poverty weighs more heavily on a child's nutrition there.</figcaption>
+      <figcaption>fig. 3: the gap between the poorest and richest fifths of households, in percentage points. Darker = poverty weighs more heavily on a child's nutrition there.</figcaption>
     </figure>
   </div>
 
   <div class="read">
-    <p>Delhi has the widest gap of all — 48 percentage points between its poorest and richest children. Haryana follows at 36, then a cluster of large states — Bihar and Jharkhand at 29, Punjab and Andhra Pradesh at 28 — where being born poor is a heavy penalty on a child's growth. In these places, the rich and poor live in effectively different nutritional worlds.</p>
-    <p>At the other extreme, Puducherry actually runs slightly negative: its richest children are marginally <em>more</em> stunted than its poorest. Sikkim and Chandigarh sit near zero. But a narrow gap is not automatically good news, and this is where the data demands care. A gap can be small because a state has lifted its poorest children up — or because it is failing its richest children too. The next map shows that the second explanation is real.</p>
+    <p>Here the definition of rich and poor is itself a deliberate choice. The survey does not use reported income, which is notoriously unreliable, especially where work is informal and seasonal. Instead it builds a wealth score from what a household actually owns and the quality of its housing and sanitation, then ranks every household across all of India into five equal groups. The poorest and richest fifths used here are the bottom and top of that national ranking. This asset-based measure captures long-run living standards better than a single year's income would, which is exactly why it tracks child nutrition more faithfully.</p>
+    <p>Delhi has the widest gap of all, 48 percentage points between its poorest and richest children. Haryana follows at 36, then a cluster of large states, Bihar and Jharkhand at 29, Punjab and Andhra Pradesh at 28, where being born poor is a heavy penalty on a child's growth. In these places the rich and poor live in effectively different nutritional worlds.</p>
+    <p>At the other extreme, Puducherry's gap comes out slightly negative, with its richest children marginally more stunted than its poorest. But this is the point where the data asks for restraint rather than excitement. Puducherry has one of the lowest overall stunting rates in the country, so both its poorest and richest fifths are small numbers, and the difference between two small, noisily measured rates is mostly noise. The negative sign is interesting, not meaningful: it sits well within the range where a slightly different sample would push it back to zero or above. What it does not show is rich children being genuinely worse off. Sikkim and Chandigarh, sitting near zero, are best read the same way.</p>
   </div>
 
   <div class="note"><div class="inner">
     <div class="lbl">how rich and poor are defined</div>
-    <p>"Poorest" and "richest" are the bottom and top fifths of households on NFHS's asset-based wealth index — built from what a household owns and its housing and sanitation, ranked across all of India. It captures long-run living standards, not a single year's income, which is why it tracks child nutrition better than headline economic output does.</p>
+    <p>"Poorest" and "richest" are the bottom and top fifths of households on the survey's asset-based wealth index, built from what a household owns and its housing and sanitation, ranked across all of India. It captures long-run living standards rather than a single year's income, which is why it tracks child nutrition better than headline economic output does.</p>
   </div></div>
 
   <div class="read">
     <h2><span class="num">04</span>And it isn't only about poverty</h2>
-    <p>The final map isolates only the richest fifth of households in each state — children whose families are, by national standards, well-off — and asks how many of them are still stunted. If stunting were purely about poverty, this map would be pale almost everywhere. It is not.</p>
+    <p>The final map isolates only the richest fifth of households in each state, children whose families are, by national standards, well-off, and asks how many of them are still stunted. If stunting were purely about poverty, this map would be pale almost everywhere. It is not.</p>
   </div>
 
   <!-- ===== FIGURE 4 (richest children) ===== -->
   <div class="figure">
     <figure>
       <img src="fig4_rich_map.png" alt="Map of child stunting within the richest fifth of households, by state">
-      <figcaption>fig. 4 — stunting among only the richest fifth of households. Even at the top of the wealth distribution, stunting persists at rates a wealthy country would find alarming.</figcaption>
+      <figcaption>fig. 4: stunting among only the richest fifth of households. Even at the top of the wealth distribution, stunting persists at rates a wealthy country would find alarming.</figcaption>
     </figure>
   </div>
 
   <div class="read">
-    <p>Among the richest fifth, stunting still runs from about 7 percent up to 32. Tripura's wealthiest children are stunted at 32 percent — higher than the <em>overall</em> rate of several states. Maharashtra's richest fifth sits at 28, Gujarat's and Delhi's and Uttar Pradesh's at 25. These are not poor households; they are the top of their state's wealth distribution, and a quarter or more of their children are still too short for their age.</p>
-    <p>Only a handful of places get their richest children near the floor: Meghalaya at 7 percent, Sikkim at 10, Odisha at 11. Notice that Meghalaya — which had the <em>worst</em> overall rate at 47 percent — has the <em>best</em> outcome for its richest children. That single contrast captures the whole argument: in Meghalaya, wealth buys a child out of stunting almost entirely, while in Tripura or Maharashtra it does not. The protective power of money itself depends on where you are.</p>
+    <p>Among the richest fifth, stunting still runs from about 7 percent up to 32. Tripura's wealthiest children are stunted at 32 percent, higher than the overall rate of several entire states. Maharashtra's richest fifth sits at 28, and Gujarat's, Delhi's, and Uttar Pradesh's at 25. These are not poor households. They are the top of their state's wealth distribution, and a quarter or more of their children are still too short for their age.</p>
+    <p>Only a handful of places get their richest children near the floor: Meghalaya at 7 percent, Sikkim at 10, Odisha at 11. Notice that Meghalaya, which had the worst overall rate at 47 percent, has the best outcome for its richest children. That single contrast carries the whole argument. In Meghalaya, wealth buys a child out of stunting almost entirely; in Tripura or Maharashtra, it does not. The protective power of money itself depends on where you are. It also resolves the puzzle from the previous map: a narrow rich-poor gap can hide the fact that a state is failing children up and down the ladder, not just at the bottom.</p>
 
-    <p class="pull">Tripura's richest children are stunted at 32 percent — higher than the overall rate of states like Tamil Nadu or Kerala.</p>
+    <p class="pull">Tripura's richest children are stunted at 32 percent, higher than the overall rate of states like Tamil Nadu or Kerala.</p>
 
     <h2><span class="num">05</span>What the four maps say together</h2>
-    <p>Read in sequence, the data tells one coherent story. Stunting is widespread and spread unevenly, from 20 to 47 percent across states. Economic output explains part of that unevenness but leaves clear exceptions — prosperous Gujarat does worse than poorer states, Kerala does better than its income predicts. The penalty of poverty within a state ranges from nothing in Puducherry to 48 points in Delhi. And even the richest children are stunted at rates between 7 and 32 percent, with the protective value of wealth varying enormously by place.</p>
-    <p>The common thread is place. The state a child is born in — its sanitation, its health systems, its institutions, its diets — shapes their odds of stunting nearly as much as their family's wealth, and sometimes more. A rich child in Tripura faces worse odds than a poor child in some southern states.</p>
-    <p>This is a description, not a diagnosis. These are associations, not causes; a state that does better than its income predicts may be doing something right, or may simply differ in ways this data does not capture. The numbers cannot tell you <em>why</em> Kerala outperforms and Gujarat lags. But they establish, clearly and repeatedly, that the question worth asking is not only how poor a child's family is — it is where that child lives. That is where the harder work of explanation begins.</p>
+    <p>Read in sequence, the data tells one coherent story. Stunting is widespread and spread unevenly, from 20 to 47 percent across states. Economic output explains part of that unevenness but leaves clear exceptions: prosperous Gujarat does worse than poorer states, while Kerala does better than its income predicts. The penalty of poverty within a state ranges from nothing in Puducherry to 48 points in Delhi. And even the richest children are stunted at rates between 7 and 32 percent, with the protective value of wealth varying enormously by place.</p>
+    <p>The common thread is place. The state a child is born in, its sanitation, its health systems, its institutions, its diets, shapes their odds of stunting nearly as much as their family's wealth, and sometimes more. A rich child in Tripura faces worse odds than a poor child in parts of the south.</p>
+    <p>This is a description, not a diagnosis, and it is worth being strict about the difference. Every figure here shows an association, not a cause. A state that does better than its income predicts may be doing something right, or may simply differ in ways this data does not capture, and the maps cannot tell you which. Throughout, the safer choices were made on purpose: weighting the sample, discarding impossible measurements, using assets rather than reported income, and labelling the trend line as descriptive rather than causal. None of that turns correlation into explanation. What the data does establish, clearly and repeatedly, is that the question worth asking is not only how poor a child's family is. It is where that child lives.</p>
   </div>
 
   <div class="endmark">
-    <p class="mono">Built with NFHS-5 (2019–21) and MOSPI state output data. Code: <a href="https://github.com/NehchalSingh" target="_blank" rel="noopener">github.com/NehchalSingh</a></p>
+    <p class="mono">Built with NFHS-5 (2019&ndash;21) and MOSPI state output data. Code: <a href="https://github.com/NehchalSingh" target="_blank" rel="noopener">github.com/NehchalSingh</a></p>
   </div>
 </article>
 
