@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lahchen Maps</title>
-<meta name="description" content="Interactive data pieces and field notes on India's economy by Nehchal Singh.">
+<meta name="description" content="Interactive data pieces and field notes on the world's public data by Nehchal Singh.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -91,8 +91,8 @@
   <div class="nav-inner">
     <a href="index.html" class="brand">Lahchen Maps</a>
     <nav class="nav-links">
-      <a href="index.html">Work</a>
-      <a href="article.html">Notes</a>
+      <a href="index.html">Home</a>
+      <a href="article.html">Work</a>
       <a href="mailto:nehchalnsb@gmail.com">Contact</a>
     </nav>
   </div>
@@ -101,7 +101,7 @@
 <div class="wrap">
   <!-- HERO: visual-first -->
   <section class="hero" style="border-top:none">
-    <p class="eyebrow">Economics · Data · Visualisation</p>
+    <p class="eyebrow">Policy · Economics · Data</p>
     <h1>Reading the world through its <em>residuals</em>.</h1>
 
     <div class="hero-figure">
@@ -119,7 +119,7 @@
       </svg>
     </div>
 
-    <p class="sub">I build things with India's public data and write about development economics — notes, charts, and research from the edges of what the numbers actually say.</p>
+    <p class="sub">I build things with the world's public data and write about development economics, notes, charts, and research from the edges of what the numbers actually say.</p>
   </section>
 
   <!-- WORK -->
@@ -127,58 +127,25 @@
     <div class="sec-head"><span class="idx">§</span><h2>Selected work</h2></div>
     <div class="gallery">
 
-      <a class="piece feature" href="article.html">
+      <a class="piece feature" href="https://nehchalsingh.github.io/Lahchen-Maps/article.html">
         <div class="viz tall">
-          <div class="viz tall">
-    <img src="fig1_stunting_map.png" alt="Figure 1">
-</div>
-.viz.tall img{
-    width:100%;
-    height:300px;      /* same as original SVG */
-    object-fit:contain;
-    display:block;
-    background:#f2ede1;   /* same paper colour */
-}
-        </div>
-        <div class="body">
-          <div class="tags"><span class="ox">interactive</span><span>flagship</span></div>
-          <h3>Which Districts Escape the Poverty–Nutrition Trap?</h3>
-          <p>An atlas of Indian districts that beat their economic fundamentals on child nutrition — corrected for measurement noise, mapped, and explained.</p>
-        </div>
-      </a>
-
-      <a class="piece" href="article.html">
-        <div class="viz short">
-          <svg viewBox="0 0 550 200" preserveAspectRatio="none">
-            <rect width="550" height="200" fill="var(--paper)"/>
-            <rect x="60" y="34" width="60" height="60" fill="var(--oxblood)" opacity=".85"/><rect x="124" y="34" width="60" height="60" fill="#c07b54" opacity=".82"/><rect x="188" y="34" width="60" height="60" fill="#e0c08a" opacity=".85"/><rect x="252" y="34" width="60" height="60" fill="#c07b54" opacity=".8"/>
-            <rect x="60" y="98" width="60" height="60" fill="#c07b54" opacity=".8"/><rect x="124" y="98" width="60" height="60" fill="var(--green)" opacity=".82"/><rect x="188" y="98" width="60" height="60" fill="var(--plot)" opacity=".85"/><rect x="252" y="98" width="60" height="60" fill="#e0c08a" opacity=".82"/>
-            <rect x="350" y="60" width="140" height="74" fill="none" stroke="var(--ink)"/>
-            <text x="366" y="92" font-family="IBM Plex Mono" font-size="11" fill="var(--ink-soft)">poor − rich</text>
-            <text x="366" y="110" font-family="IBM Plex Mono" font-size="11" fill="var(--ink-soft)">stunting gap</text>
+          <svg viewBox="0 0 1120 300" preserveAspectRatio="none">
+            <rect width="1120" height="300" fill="var(--paper)"/>
+            <g stroke="var(--rule)" stroke-width="0.6" opacity="0.6"><line x1="0" y1="100" x2="1120" y2="100"/><line x1="0" y1="200" x2="1120" y2="200"/></g>
+            <line x1="60" y1="250" x2="1060" y2="70" stroke="var(--oxblood)" stroke-width="1.3" stroke-dasharray="6 5" opacity=".6"/>
+            <g fill="var(--plot)" opacity=".78">
+              <circle cx="130" cy="236" r="5"/><circle cx="210" cy="214" r="5"/><circle cx="300" cy="222" r="5"/><circle cx="380" cy="190" r="5"/>
+              <circle cx="470" cy="198" r="5"/><circle cx="560" cy="160" r="5"/><circle cx="650" cy="172" r="5"/><circle cx="740" cy="132" r="5"/>
+              <circle cx="830" cy="146" r="5"/><circle cx="920" cy="108" r="5"/><circle cx="1000" cy="120" r="5"/>
+            </g>
+            <circle cx="380" cy="190" r="8" fill="var(--green)"/><circle cx="380" cy="190" r="15" fill="none" stroke="var(--green)" stroke-width="1.4" opacity=".5"/>
+            <circle cx="650" cy="172" r="8" fill="var(--oxblood)"/><circle cx="650" cy="172" r="15" fill="none" stroke="var(--oxblood)" stroke-width="1.4" opacity=".5"/>
           </svg>
         </div>
         <div class="body">
-          <div class="tags"><span>map</span></div>
-          <h3>Nutrition Inequality Atlas</h3>
-          <p>Poor-vs-rich stunting gaps across Indian states.</p>
-        </div>
-      </a>
-
-      <a class="piece" href="article.html">
-        <div class="viz short">
-          <svg viewBox="0 0 550 200" preserveAspectRatio="none">
-            <rect width="550" height="200" fill="var(--paper)"/>
-            <g fill="var(--green)"><rect x="70" y="44" width="50" height="120" opacity=".82"/><rect x="128" y="66" width="50" height="98" opacity=".8"/></g>
-            <g fill="#bcae8e"><rect x="200" y="84" width="50" height="80"/><rect x="258" y="92" width="50" height="72"/></g>
-            <g fill="var(--oxblood)"><rect x="346" y="104" width="50" height="60" opacity=".82"/><rect x="404" y="120" width="50" height="44" opacity=".84"/><rect x="462" y="132" width="50" height="32" opacity=".84"/></g>
-            <line x1="56" y1="164" x2="520" y2="164" stroke="var(--ink)"/>
-          </svg>
-        </div>
-        <div class="body">
-          <div class="tags"><span>chart</span></div>
-          <h3>Decomposing the Gap</h3>
-          <p>What explains the distance between high- and low-nutrition districts.</p>
+          <div class="tags"><span class="ox">data story</span><span>nfhs-5</span></div>
+          <h3>Nutrition Inequality Atlas — Where a Child Lives</h3>
+          <p>Why some Indian states protect children from stunting and others don't — and why where a child is born matters almost as much as how poor their family is.</p>
         </div>
       </a>
 
@@ -188,7 +155,7 @@
 
 <footer>
   <div class="wrap foot-grid">
-    <div class="big">Maps and notes from India's <em>public data</em>.</div>
+    <div class="big">Maps and notes from the world's <em>public data</em>.</div>
     <div class="links">
       <a href="https://github.com/NehchalSingh" target="_blank" rel="noopener">github</a>
       <a href="mailto:nehchalnsb@gmail.com">email</a>
