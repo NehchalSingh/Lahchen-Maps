@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lahchen Maps</title>
+<meta name="description" content="Interactive data pieces and field notes on India's economy by Nehchal Singh.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f2ede1; --paper-deep:#e9e2d1; --ink:#1b2a3a; --ink-soft:#41566b;
+    --rule:#c9bfa8; --oxblood:#8c2f24; --plot:#2d4a63; --green:#4f7a5e;
+    --gridline:rgba(120,105,75,0.13); --max:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:"Newsreader",Georgia,serif;font-size:18px;line-height:1.55;
+    background-image:linear-gradient(var(--gridline) 1px,transparent 1px),linear-gradient(90deg,var(--gridline) 1px,transparent 1px);
+    background-size:30px 30px;-webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  .mono{font-family:"IBM Plex Mono",monospace}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:"Fraunces",serif;font-weight:500;line-height:1.04;letter-spacing:-0.015em}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 30px}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(242,237,225,0.88);backdrop-filter:blur(7px);border-bottom:1px solid var(--rule)}
+  .nav-inner{display:flex;justify-content:space-between;align-items:baseline;max-width:var(--max);margin:0 auto;padding:15px 30px}
+  .brand{font-family:"Fraunces",serif;font-weight:700;font-size:21px;letter-spacing:-0.02em}
+  .brand .est{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:0.14em;color:var(--ink-soft);margin-left:10px;vertical-align:middle}
+  .nav-links{display:flex;gap:24px}
+  .nav-links a{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink-soft);padding-bottom:2px;border-bottom:1px solid transparent;transition:.2s}
+  .nav-links a:hover{color:var(--oxblood);border-color:var(--oxblood)}
+
+  /* HERO — visual-first: the plotted series is large and central */
+  .hero{padding:60px 0 40px}
+  .hero .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--oxblood);margin-bottom:18px}
+  .hero h1{font-size:clamp(40px,6.4vw,82px);max-width:15ch}
+  .hero h1 em{font-style:italic;color:var(--oxblood)}
+  .hero-figure{margin-top:40px;border:1px solid var(--ink);background:var(--paper-deep);box-shadow:8px 8px 0 rgba(27,42,58,0.10)}
+  .hero-figure .cap{display:flex;justify-content:space-between;padding:9px 14px;border-bottom:1px solid var(--rule)}
+  .hero-figure .cap span{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:0.07em;color:var(--ink-soft)}
+  svg.bigseries{display:block;width:100%;height:300px}
+  .bigseries .l{fill:none;stroke:var(--plot);stroke-width:2.2;stroke-dasharray:1800;stroke-dashoffset:1800;animation:draw 2.8s ease forwards .4s}
+  .bigseries .fillarea{fill:var(--plot);opacity:0.07}
+  .bigseries .pred{stroke:var(--oxblood);stroke-width:1.3;stroke-dasharray:6 5;opacity:.65}
+  .bigseries .dot{opacity:0;animation:pop .5s ease forwards 2.7s}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  @keyframes pop{to{opacity:1}}
+  .hero .sub{margin-top:26px;font-size:20px;color:var(--ink-soft);max-width:54ch}
+
+  /* WORK — visual gallery */
+  section{padding:54px 0;border-top:1px solid var(--rule)}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:30px}
+  .sec-head .idx{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--oxblood);border:1px solid var(--oxblood);border-radius:50%;width:30px;height:30px;display:grid;place-items:center;flex:none}
+  .sec-head h2{font-size:clamp(26px,3.4vw,38px)}
+
+  .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .piece{grid-column:span 1;border:1px solid var(--ink);background:var(--paper-deep);box-shadow:6px 6px 0 rgba(27,42,58,0.08);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+  .piece.feature{grid-column:span 2}
+  .piece:hover{transform:translate(-3px,-3px);box-shadow:10px 10px 0 rgba(140,47,36,0.16)}
+  .piece .viz{background:var(--paper);border-bottom:1px solid var(--rule)}
+  .piece .viz svg{display:block;width:100%}
+  .piece .viz.tall svg{height:300px}
+  .piece .viz.short svg{height:200px}
+  .piece .body{padding:18px 20px 22px}
+  .piece .tags{display:flex;gap:8px;margin-bottom:10px}
+  .piece .tags span{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--paper);background:var(--ink);padding:3px 8px;border-radius:2px}
+  .piece .tags span.ox{background:var(--oxblood)}
+  .piece h3{font-size:22px;font-weight:500}
+  .piece.feature h3{font-size:30px}
+  .piece p{font-size:15px;color:var(--ink-soft);margin-top:8px;max-width:60ch}
+
+  footer{border-top:1px solid var(--ink);padding:46px 0 60px;margin-top:14px}
+  .foot-grid{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px}
+  footer .big{font-family:"Fraunces",serif;font-size:clamp(28px,4.5vw,48px);font-weight:500;line-height:1.05;max-width:18ch}
+  footer .big em{font-style:italic;color:var(--oxblood)}
+  .links{display:flex;gap:20px}
+  .links a{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink-soft);border-bottom:1px solid var(--rule);padding-bottom:2px;transition:.2s}
+  .links a:hover{color:var(--oxblood);border-color:var(--oxblood)}
+
+  @media(max-width:760px){.gallery{grid-template-columns:1fr}.piece,.piece.feature{grid-column:span 1}.nav-links{display:none}svg.bigseries{height:220px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="brand">Lahchen Maps</a>
+    <nav class="nav-links">
+      <a href="index.html">Work</a>
+      <a href="article.html">Notes</a>
+      <a href="mailto:nehchalnsb@gmail.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <!-- HERO: visual-first -->
+  <section class="hero" style="border-top:none">
+    <p class="eyebrow">Economics · Data · Visualisation</p>
+    <h1>Reading the world through its <em>residuals</em>.</h1>
+
+    <div class="hero-figure">
+      <div class="cap"><span>fig. 01 — what the model misses</span><span>resid(y)</span></div>
+      <svg class="bigseries" viewBox="0 0 1120 300" preserveAspectRatio="none" aria-hidden="true">
+        <g stroke="var(--rule)" stroke-width="0.6" opacity="0.6">
+          <line x1="0" y1="75" x2="1120" y2="75"/><line x1="0" y1="150" x2="1120" y2="150"/><line x1="0" y1="225" x2="1120" y2="225"/>
+        </g>
+        <line class="pred" x1="40" y1="248" x2="1080" y2="70"/>
+        <path class="fillarea" d="M40,232 C160,205 220,165 320,178 C430,192 500,120 620,132 C760,146 840,80 1080,96 L1080,300 L40,300 Z"/>
+        <path class="l" d="M40,232 C160,205 220,165 320,178 C430,192 500,120 620,132 C760,146 840,80 1080,96"/>
+        <circle class="dot" cx="320" cy="178" r="5" fill="var(--green)"/>
+        <circle class="dot" cx="620" cy="132" r="5" fill="var(--oxblood)"/>
+        <circle class="dot" cx="1080" cy="96" r="5" fill="var(--plot)"/>
+      </svg>
+    </div>
+
+    <p class="sub">I build things with India's public data and write about development economics — notes, charts, and research from the edges of what the numbers actually say.</p>
+  </section>
+
+  <!-- WORK -->
+  <section>
+    <div class="sec-head"><span class="idx">§</span><h2>Selected work</h2></div>
+    <div class="gallery">
+
+      <a class="piece feature" href="article.html">
+        <div class="viz tall">
+          <svg viewBox="0 0 1120 300" preserveAspectRatio="none">
+            <rect width="1120" height="300" fill="var(--paper)"/>
+            <g stroke="var(--rule)" stroke-width="0.6" opacity="0.6"><line x1="0" y1="100" x2="1120" y2="100"/><line x1="0" y1="200" x2="1120" y2="200"/></g>
+            <line x1="60" y1="250" x2="1060" y2="70" stroke="var(--oxblood)" stroke-width="1.3" stroke-dasharray="6 5" opacity=".6"/>
+            <g fill="var(--plot)" opacity=".78">
+              <circle cx="130" cy="236" r="5"/><circle cx="210" cy="214" r="5"/><circle cx="300" cy="222" r="5"/><circle cx="380" cy="190" r="5"/>
+              <circle cx="470" cy="198" r="5"/><circle cx="560" cy="160" r="5"/><circle cx="650" cy="172" r="5"/><circle cx="740" cy="132" r="5"/>
+              <circle cx="830" cy="146" r="5"/><circle cx="920" cy="108" r="5"/><circle cx="1000" cy="120" r="5"/>
+            </g>
+            <circle cx="380" cy="190" r="8" fill="var(--green)"/><circle cx="380" cy="190" r="15" fill="none" stroke="var(--green)" stroke-width="1.4" opacity=".5"/>
+            <circle cx="650" cy="172" r="8" fill="var(--oxblood)"/><circle cx="650" cy="172" r="15" fill="none" stroke="var(--oxblood)" stroke-width="1.4" opacity=".5"/>
+          </svg>
+        </div>
+        <div class="body">
+          <div class="tags"><span class="ox">interactive</span><span>flagship</span></div>
+          <h3>Which Districts Escape the Poverty–Nutrition Trap?</h3>
+          <p>An atlas of Indian districts that beat their economic fundamentals on child nutrition — corrected for measurement noise, mapped, and explained.</p>
+        </div>
+      </a>
+
+      <a class="piece" href="article.html">
+        <div class="viz short">
+          <svg viewBox="0 0 550 200" preserveAspectRatio="none">
+            <rect width="550" height="200" fill="var(--paper)"/>
+            <rect x="60" y="34" width="60" height="60" fill="var(--oxblood)" opacity=".85"/><rect x="124" y="34" width="60" height="60" fill="#c07b54" opacity=".82"/><rect x="188" y="34" width="60" height="60" fill="#e0c08a" opacity=".85"/><rect x="252" y="34" width="60" height="60" fill="#c07b54" opacity=".8"/>
+            <rect x="60" y="98" width="60" height="60" fill="#c07b54" opacity=".8"/><rect x="124" y="98" width="60" height="60" fill="var(--green)" opacity=".82"/><rect x="188" y="98" width="60" height="60" fill="var(--plot)" opacity=".85"/><rect x="252" y="98" width="60" height="60" fill="#e0c08a" opacity=".82"/>
+            <rect x="350" y="60" width="140" height="74" fill="none" stroke="var(--ink)"/>
+            <text x="366" y="92" font-family="IBM Plex Mono" font-size="11" fill="var(--ink-soft)">poor − rich</text>
+            <text x="366" y="110" font-family="IBM Plex Mono" font-size="11" fill="var(--ink-soft)">stunting gap</text>
+          </svg>
+        </div>
+        <div class="body">
+          <div class="tags"><span>map</span></div>
+          <h3>Nutrition Inequality Atlas</h3>
+          <p>Poor-vs-rich stunting gaps across Indian states.</p>
+        </div>
+      </a>
+
+      <a class="piece" href="article.html">
+        <div class="viz short">
+          <svg viewBox="0 0 550 200" preserveAspectRatio="none">
+            <rect width="550" height="200" fill="var(--paper)"/>
+            <g fill="var(--green)"><rect x="70" y="44" width="50" height="120" opacity=".82"/><rect x="128" y="66" width="50" height="98" opacity=".8"/></g>
+            <g fill="#bcae8e"><rect x="200" y="84" width="50" height="80"/><rect x="258" y="92" width="50" height="72"/></g>
+            <g fill="var(--oxblood)"><rect x="346" y="104" width="50" height="60" opacity=".82"/><rect x="404" y="120" width="50" height="44" opacity=".84"/><rect x="462" y="132" width="50" height="32" opacity=".84"/></g>
+            <line x1="56" y1="164" x2="520" y2="164" stroke="var(--ink)"/>
+          </svg>
+        </div>
+        <div class="body">
+          <div class="tags"><span>chart</span></div>
+          <h3>Decomposing the Gap</h3>
+          <p>What explains the distance between high- and low-nutrition districts.</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="big">Maps and notes from India's <em>public data</em>.</div>
+    <div class="links">
+      <a href="https://github.com/NehchalSingh" target="_blank" rel="noopener">github</a>
+      <a href="mailto:nehchalnsb@gmail.com">email</a>
+      <a href="https://www.linkedin.com/in/nehchal-singh-0908131b4/" target="_blank" rel="noopener">linkedin</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
