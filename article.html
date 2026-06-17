@@ -76,7 +76,30 @@
   .links a{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink-soft);border-bottom:1px solid var(--rule);padding-bottom:2px;transition:.2s}
   .links a:hover{color:var(--oxblood);border-color:var(--oxblood)}
 
-  @media(max-width:760px){.nav-links{display:none}}
+  @media(max-width:760px){
+    .nav-links{display:none}
+    /* give figures more width and a lighter shadow so nothing clips off-screen */
+    .figure{padding:0 12px;margin:22px auto}
+    .figure figure{box-shadow:4px 4px 0 rgba(27,42,58,0.10)}
+    .figure figcaption{font-size:10px;padding:9px 12px;line-height:1.45}
+    /* readable body sizing on small screens */
+    .ahead{padding:42px 18px 8px}
+    .ahead h1{font-size:34px}
+    .ahead .standfirst{font-size:19px}
+    .abstract{padding:10px 18px 4px}
+    .abstract p,.abstract p:first-child{font-size:18px;line-height:1.62}
+    .read{padding:22px 18px 4px}
+    .read p{font-size:18px;line-height:1.62}
+    .read h2{font-size:24px}
+    .read .pull{font-size:21px;padding-left:16px;margin:26px 0}
+    .note{padding:0 18px}
+    .note .inner{padding:16px 18px}
+    .foot-grid{padding:0 18px;flex-direction:column;align-items:flex-start;gap:18px}
+    footer .big{font-size:24px}
+    .endmark{padding:30px 18px}
+    /* shrink the background grid so it isn't busy on a small screen */
+    body{background-size:22px 22px}
+  }
 </style>
 </head>
 <body>
