@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About · Lahchen Maps</title>
+<meta name="description" content="An economics student learning to read the data directly, and to build visual stories that sit right with the numbers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f2ede1; --paper-deep:#e9e2d1; --ink:#1b2a3a; --ink-soft:#41566b;
+    --rule:#c9bfa8; --oxblood:#8c2f24; --plot:#2d4a63; --green:#4f7a5e;
+    --gridline:rgba(120,105,75,0.13); --read:680px; --wide:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);color:var(--ink);font-family:"Newsreader",Georgia,serif;
+    background-image:linear-gradient(var(--gridline) 1px,transparent 1px),linear-gradient(90deg,var(--gridline) 1px,transparent 1px);
+    background-size:30px 30px;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;
+  }
+  a{color:inherit;text-decoration:none}
+  h1,h2{font-family:"Fraunces",serif;font-weight:500;line-height:1.05;letter-spacing:-0.015em}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(242,237,225,0.88);backdrop-filter:blur(7px);border-bottom:1px solid var(--rule)}
+  .nav-inner{display:flex;justify-content:space-between;align-items:baseline;max-width:var(--wide);margin:0 auto;padding:15px 30px}
+  .brand{font-family:"Fraunces",serif;font-weight:700;font-size:21px;letter-spacing:-0.02em}
+  .nav-links{display:flex;gap:24px}
+  .nav-links a{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink-soft);padding-bottom:2px;border-bottom:1px solid transparent;transition:.2s}
+  .nav-links a:hover,.nav-links a.active{color:var(--oxblood);border-color:var(--oxblood)}
+
+  main{flex:1}
+  .about{max-width:var(--read);margin:0 auto;padding:70px 24px 40px}
+  .about .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--oxblood);margin-bottom:16px}
+  .about h1{font-size:clamp(38px,6vw,62px);font-weight:600;margin-bottom:30px}
+  .about p{font-size:20px;line-height:1.72;color:#222e3c;margin:20px 0}
+  .about p.lead{font-size:23px;line-height:1.55;color:var(--ink)}
+  .about p.lead em{font-style:italic;color:var(--oxblood)}
+
+  .connect{max-width:var(--read);margin:10px auto 0;padding:0 24px}
+  .connect .rule{border:0;border-top:1px solid var(--rule);margin:8px 0 28px}
+  .connect .lbl{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:16px}
+  .btn-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .btn{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:0.04em;padding:11px 20px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);transition:.2s}
+  .btn:hover{background:var(--oxblood);border-color:var(--oxblood)}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .btn.ghost:hover{background:transparent;color:var(--oxblood);border-color:var(--oxblood)}
+
+  footer{border-top:1px solid var(--ink);padding:40px 0 50px;margin-top:54px}
+  .foot-grid{max-width:var(--wide);margin:0 auto;padding:0 30px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:22px}
+  footer .big{font-family:"Fraunces",serif;font-size:clamp(24px,3.4vw,34px);font-weight:500;line-height:1.05;max-width:18ch}
+  footer .big em{font-style:italic;color:var(--oxblood)}
+  .links{display:flex;gap:20px}
+  .links a{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink-soft);border-bottom:1px solid var(--rule);padding-bottom:2px;transition:.2s}
+  .links a:hover{color:var(--oxblood);border-color:var(--oxblood)}
+
+  @media(max-width:760px){
+    .nav-links{gap:16px}
+    .about{padding:48px 18px 30px}
+    .about h1{font-size:38px}
+    .about p{font-size:18px;line-height:1.65}
+    .about p.lead{font-size:20px}
+    .connect{padding:0 18px}
+    .foot-grid{padding:0 18px;flex-direction:column;align-items:flex-start;gap:18px}
+    footer .big{font-size:24px}
+    body{background-size:22px 22px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="brand">Lahchen Maps</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="article.html">Work</a>
+      <a href="about.html" class="active">About</a>
+      <a href="mailto:nehchalnsb@gmail.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="about">
+    <p class="eyebrow">About</p>
+    <h1>Reading the data myself</h1>
+
+    <p class="lead">I was told I had no vision for my future, so I decided to focus on <em>visualisation</em> instead.</p>
+
+    <p>I'm an economics student, and I question the validity of the field almost every day. Rather than keep arguing about whether it holds up, I've decided to find out for myself, by learning to work with the data directly instead of talking around it.</p>
+
+    <p>So I've been teaching myself to decode large public datasets, and to use the economics and econometric methods I find genuinely interesting and practical, not just the ones that look elegant on a page.</p>
+
+    <p>More than opinion pieces, I want to listen to what the data is actually saying and build visual stories that sit right with the numbers. I write what the data tells me, not what I wish it said. And I try to be honest about the rest: the constraints of handling messy, massive datasets, the struggles along the way, and why I made the decisions I did. The choices are part of the story, not something to hide.</p>
+
+    <p>This site is where that work lives. If any of it interests you, I'd like to hear from you.</p>
+  </div>
+
+  <div class="connect">
+    <hr class="rule">
+    <p class="lbl">Get in touch</p>
+    <div class="btn-row">
+      <a class="btn" href="mailto:nehchalnsb@gmail.com">Email me</a>
+      <a class="btn ghost" href="https://github.com/NehchalSingh" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/nehchal-singh-0908131b4/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div class="big">Maps and notes from the world's <em>public data</em>.</div>
+    <div class="links">
+      <a href="https://github.com/NehchalSingh" target="_blank" rel="noopener">github</a>
+      <a href="mailto:nehchalnsb@gmail.com">email</a>
+      <a href="https://www.linkedin.com/in/nehchal-singh-0908131b4/" target="_blank" rel="noopener">linkedin</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
