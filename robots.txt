@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nehchalsingh.github.io/Lahchen-Maps/sitemap.xml
