@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 · Lahchen Maps</title>
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#f2ede1;--paper-deep:#e9e2d1;--ink:#1b2a3a;--ink-soft:#41566b;--rule:#c9bfa8;--oxblood:#8c2f24;--gridline:rgba(120,105,75,0.13)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background:var(--paper);color:var(--ink);font-family:"Newsreader",Georgia,serif;text-align:center;padding:30px;
+    background-image:linear-gradient(var(--gridline) 1px,transparent 1px),linear-gradient(90deg,var(--gridline) 1px,transparent 1px);
+    background-size:30px 30px;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .brand{position:fixed;top:24px;left:30px;font-family:"Fraunces",serif;font-weight:700;font-size:20px}
+  .card{max-width:680px}
+  .art{width:100%;max-width:620px;height:auto;display:block;margin:0 auto 28px;border:1px solid var(--ink);box-shadow:8px 8px 0 rgba(27,42,58,0.10)}
+  h1{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(28px,5vw,40px);margin-bottom:12px}
+  p{font-size:19px;color:var(--ink-soft);font-style:italic;margin-bottom:26px}
+  .links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .btn{font-family:"IBM Plex Mono",monospace;font-size:14px;padding:11px 20px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);transition:.2s}
+  .btn:hover{background:var(--oxblood);border-color:var(--oxblood)}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .btn.ghost:hover{background:transparent;color:var(--oxblood);border-color:var(--oxblood)}
+  @media(max-width:600px){.art{box-shadow:4px 4px 0 rgba(27,42,58,0.10)}body{background-size:22px 22px}}
+</style>
+</head>
+<body>
+  <a href="index.html" class="brand">Lahchen Maps</a>
+  <div class="card">
+    <img class="art" src="404.png" alt="404: this region isn't on the map. The page you were looking for doesn't exist or it moved.">
+    <div class="links">
+      <a class="btn" href="index.html">Back to home</a>
+    </div>
+  </div>
+</body>
+</html>
