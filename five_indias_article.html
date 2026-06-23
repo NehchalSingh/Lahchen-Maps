@@ -24,19 +24,34 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#f2ede1; --paper-deep:#e9e2d1; --ink:#1b2a3a; --ink-soft:#41566b;
-    --rule:#c9bfa8; --oxblood:#8c2f24; --plot:#2d4a63; --green:#4f7a5e;
-    --gridline:rgba(120,105,75,0.13); --max:1180px;
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--paper);color:var(--ink);font-family:"Newsreader",Georgia,serif;font-size:19px;line-height:1.62;
-    background-image:linear-gradient(var(--gridline) 1px,transparent 1px),linear-gradient(90deg,var(--gridline) 1px,transparent 1px);
-    background-size:30px 30px;-webkit-font-smoothing:antialiased;
-  }
-  .mono{font-family:"IBM Plex Mono",monospace}
-  a{color:inherit;text-decoration:none}
-  h1,h2,h3,h4{font-family:"Fraunces",serif;font-weight:500;line-height:1.06;letter-spacing:-0.015em}
+  --paper:#f2ede1;
+  --paper-deep:#e9e2d1;
+  --ink:#1b2a3a;
+  --ink-soft:#41566b;
+
+  --rule:#c9bfa8;
+  --oxblood:#8c2f24;
+  --plot:#2d4a63;
+  --green:#4f7a5e;
+
+  --gridline:rgba(120,105,75,0.13);
+
+  --read:700px;
+  --wide:1080px;
+
+  --plum:#6b3654;
+  --rose:#c1577d;
+  --panel:#efe6da;
+}
+@media(max-width:760px){
+  .nav-inner{flex-wrap:wrap;gap:6px 0;padding:12px 18px}
+  .nav-links{gap:14px;flex-wrap:wrap}
+  .nav-links a{font-size:11px}
+}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
   /* ---- header (Lahchen house) ---- */
   header{position:sticky;top:0;z-index:50;background:rgba(242,237,225,0.88);backdrop-filter:blur(7px);border-bottom:1px solid var(--rule)}
