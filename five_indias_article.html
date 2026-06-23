@@ -12,7 +12,7 @@
 <meta property="og:description" content="How development and gender norms diverge across 707 Indian districts.">
 <meta property="og:image" content="five_indias_preview.svg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The Five Indias of Women's Status">
+<meta name="twitter:title" content="The Fivjuse Indias of Women's Status">
 <meta name="twitter:image" content="five_indias_preview.svg">
 
 <!-- favicon copied from article.html -->
@@ -37,7 +37,7 @@
   .mono{font-family:"IBM Plex Mono",monospace}
   a{color:inherit;text-decoration:none}
   h1,h2,h3,h4{font-family:"Fraunces",serif;font-weight:500;line-height:1.06;letter-spacing:-0.015em}
-
+}
   /* ---- header (Lahchen house) ---- */
   header{position:sticky;top:0;z-index:50;background:rgba(242,237,225,0.88);backdrop-filter:blur(7px);border-bottom:1px solid var(--rule)}
   .nav-inner{display:flex;justify-content:space-between;align-items:baseline;max-width:var(--wide);margin:0 auto;padding:15px 30px}
@@ -151,25 +151,25 @@
 <div class="ahead">
   <div class="tags"><span>Machine Learning</span><span>NFHS-5</span><span>707 Districts</span><span>India</span></div>
   <h1>The Five Indias of Women's Status</h1>
-  <p class="standfirst">State averages hide as much as they reveal. Let the data sort 707 districts on their own, and "two Indias" quietly becomes five — with development and women's status refusing to travel together.</p>
+  <p class="standfirst">State averages hide as much as they reveal.I let the data sort 707 districts on their own with a simple machine learning exercise, and the "two Indias" quietly became five, with development and women's status refusing to travel together.</p>
   
 </div>
 
 <article>
 
-  <p class="lede">In a much-shared monologue, Vir Das described two Indias living inside the same country — one of progress, one of constraint, somehow sharing an address. It landed because most of us have felt it: opportunity and limitation sitting side by side, often on the same street.</p>
+  <pIn a widely shared monologue, Vir Das described two Indias living inside the same country- one of progress, one of constraint, somehow sharing an address. It landed because most of us have felt it: opportunity and limitation sitting side by side, often on the same street.</p>
 
-  <p>Conversations about women in India tend to run along the same lines. Haryana carries a reputation for restrictive norms and thin female agency; Kerala, Goa, and parts of the Northeast get cast as gentler places to be a woman. These shorthand maps are useful — and they flatten a much messier reality.</p>
+  <p>Conversations about women in India tend to run along the same lines. Haryana carries a reputation for restrictive norms and thin female agency; Kerala, Goa, and parts of the Northeast get cast as gentler places to be a woman. These shorthand maps are useful but they flatten a much messier reality.</p>
 
   <p>Here's a simple hunch worth testing: if women's status really varies across India, the variation shouldn't stop at state borders. A "bad" state should still hold pockets of relative progress; a celebrated one should still hide districts that struggle. State averages, however tidy, can bury all of that local texture.</p>
 
-  <p>So instead of starting from regional stereotypes, I handed the question to the data. Using India's National Family Health Survey (NFHS-5), I built a district-level portrait of women's status from four deliberately plain ingredients — <em>female education</em>, <em>household wealth</em>, <em>access to information</em> (newspaper readership), and <em>gender norms</em> — and let an algorithm group 707 districts by how they actually look, not by which state they sit in.</p>
+  <p>So instead of starting from regional stereotypes, I handed the question to the data. Using India's National Family Health Survey (NFHS-5), I built a district-level portrait of women's status from four simple ingredients (variables) — <em>female education</em>, <em>household wealth</em>, <em>access to information</em> (newspaper readership), and <em>gender norms</em> and let an algorithm group 707 districts by how they actually look, not by which state they sit in.</p>
 
-  <p>The result isn't two Indias. It's five. And the more interesting part is what the grouping exposes: <em>development and gender norms don't always move together.</em> Some districts are comparatively prosperous yet socially conservative; others are poor but strikingly progressive. Before any of the method, here's the map those five groups make.</p>
+  <p>The result isn't two Indias. It's five. And the more interesting part is what the grouping exposes: <em>development and gender norms don't always move together.</em> Some districts are comparatively prosperous yet socially conservative; others are poor but more progressive. Before any of the method, here's the map those five groups make.</p>
 
   <!-- MAP EARLY -->
   <figure>
-  <img src="Five%20Indias%20Article%20(1)/figures/fig1_map.png">
+  <img src="Five%20Indias%20Article%20(1)/figures/fig1_map.png"
        alt="Map of India's districts coloured by the five clusters"
        style="width:100%;height:auto;display:block;">
   <figcaption>
@@ -177,22 +177,22 @@
   </figcaption>
 </figure>
 
-  <p>Look at the South and the northern plains as two different weather systems, and the outliers start to jump out — a scatter of prosperous, progressive districts inside states you'd never expect, and conservative pockets inside states you would.</p>
+  <p>Once the map is viewed through regional rather than state boundaries, the anomalies begin to glow. Prosperous, progressive districts emerge inside states known for conservatism, while conservative enclaves linger inside places celebrated for social progress.</p>
 
   <!-- NORMS LIMITATION, STATED EARLY -->
   <div class="callout flag">
     <span class="lbl">Read this before the colours</span>
-    <p>One ingredient needs a health warning. Three of the four — education, wealth, newspaper reading — are solid, full-sample measures. <em>Gender norms is not</em>. It comes from a single survey question (whether a woman rejects every listed justification for a husband hitting his wife), asked of a smaller sub-sample and carrying its own separate weighting.</p>
-    <p>So treat the norms axis as <em>relative, not absolute</em>. We can fairly say one cluster rejects those justifications more often than another; we should not read it as a precise thermometer of how equal a place is. Norms is one of four ingredients here — not the headline. The story is the five Indias, and the colours of the map mean "this combination of development and attitudes," not "good place / bad place."</p>
+    <p>One variable needs a rather careful interpretation. Three of the four: education, wealth, newspaper reading are solid, full-sample measures. <em>Gender norms is not</em>. It comes from a set of survey questions about domestic violence (whether a woman rejects every listed justification for a husband hitting his wife), asked of a smaller sub-sample and carrying its own separate weighting.</p>
+    <p>So treat the norms axis as <em>relative, not absolute</em>. We can say one cluster rejects those justifications more often than another but we should not read it as a precise thermometer of how equal a place is. Norms is one of four ingredients here, but not the headline. The story is the five Indias, and the colours of the map mean "this combination of development and attitudes," not "good place / bad place."</p>
   </div>
 
-  <h2><span class="k">01 — The cast</span>Meet the five Indias</h2>
-  <p>Named for what each group actually is — leading with development, and kept deliberately fair. From the most developed to the least:</p>
+  <h2><span class="k">01 — The cast</span>Exploring the five Indias</h2>
+  <p>Named for what each group actually is, leading with development, and kept deliberately fair. From the most developed to the least (vaguely):</p>
 
   <details class="method">
     <summary><span class="tag">Method</span> How these five groups were actually built <span class="chev">›</span></summary>
     <div class="mbody">
-      <p><strong>The short version.</strong> Four district-level numbers go in — education, wealth, newspaper readership, and gender norms (the norms caveat above applies throughout; it's one ingredient, not the headline). Each is standardised so no single variable dominates by sheer scale, then reduced with principal component analysis: the first component (<strong>54.5%</strong> of the variation) is essentially "development" — education, wealth and newspaper moving together; the second (<strong>25.8%</strong>) is norms, almost entirely on its own. K-means runs on those two components, not on the four raw numbers, and lands on five groups.</p>
+      <p><strong>The short version.</strong> Four district-level variables: education, wealth, newspaper readership, and gender norms (the norms caveat above applies throughout; it's one ingredient, not the headline). Each is standardised so no single variable dominates by sheer scale, then reduced with principal component analysis: the first component (<strong>54.5%</strong> of the variation) is essentially "development" as it includes education, wealth and newspaper moving partially together; the second (<strong>25.8%</strong>) is norms, almost entirely on its own. The districts are then grouped into five clusters based on these components.</p>
       <table class="mtable">
         <tr><th>variable</th><th>loads on PC1 (development)</th><th>loads on PC2 (norms)</th></tr>
         <tr><td>Education</td><td class="num">0.572</td><td class="num">0.209</td></tr>
@@ -209,7 +209,7 @@
         <tr><td>5</td><td class="num">0.389 (chosen)</td></tr>
         <tr><td>6</td><td class="num">0.376</td></tr>
       </table>
-      <p>Three is the statistical optimum; five isn't even second-best on this metric, beating only four. The choice is disclosed as substantive, not statistical: five is the smallest K at which the small, distinctive Development Frontier cluster separates cleanly from the rest rather than being absorbed into a larger "developed" group (see §02 below for the merge-tree evidence).</p>
+      <p>Three clusters provide the cleanest statistical separation, but they largely reduce India to a simple development hierarchy. Four and five clusters perform almost identically on the silhouette metric, suggesting little statistical difference between them. The five-cluster solution is retained because it separates out a small but distinctive Development Frontier that would otherwise be absorbed into a broader developed group. The loss in statistical fit is negligible, while the additional cluster reveals one of the most interesting patterns in the data.</p>
       <p><strong>Does the split hold up statistically?</strong> A one-way ANOVA across the five clusters, run separately for each of the four ingredients, rejects "these groups have the same mean" by an enormous margin on all four:</p>
       <table class="mtable">
         <tr><th>variable</th><th>F-statistic</th><th>p-value</th></tr>
@@ -218,7 +218,7 @@
         <tr><td>Norms</td><td class="num">361.7</td><td class="num">7.0×10<sup>&minus;169</sup></td></tr>
         <tr><td>Education</td><td class="num">235.2</td><td class="num">5.2×10<sup>&minus;128</sup></td></tr>
       </table>
-      <p>These are genuinely distinct social profiles, not an artefact of where K-means happened to draw its lines. A separate robustness check — re-clustering on the three development variables alone, with norms removed — reshuffles a large share of districts across groups, which is exactly what you'd expect if norms is carrying real, independent information rather than echoing wealth. The full crosstab is in the accompanying notebook.</p>
+      <p>These clusters differ meaningfully across all four variables. Repeating the analysis without the norms variable led to substantial changes in cluster membership, indicating that norms contribute information beyond the development measures. The full crosstab is available in the accompanying notebook.</p>
       <p>What follows reads each cluster off these same numbers, expressed as standard deviations from the five-cluster average (Figure 2) — not as a separate, looser description.</p>
     </div>
   </details>
@@ -226,23 +226,23 @@
   <div class="cards">
     <div class="card" style="--c:#d2b235">
       <h4>Development Frontier <span class="n">23 districts · 3.3% of all districts · the smallest group</span></h4>
-      <p>The most developed districts in the country, full stop — top of the table on schooling, wealth, and information access. A small, distinctive cluster of metros and high-performing pockets where opportunity for women is widest.</p>
+      <p>A small group of districts that rank highest on the combined measures used in this study: female education, household wealth, access to information, and gender norms. They record the strongest outcomes for women overall and form a distinct cluster at the top of the distribution. Their lead is pronounced on education, wealth, and information access, while there is a smalldisadvantage on norms which may be because of small or inadequate sample size in the chosen districts. This also reflects the fact that attitudes toward wife-beating capture only one dimension of gender norms, or that differences become harder to distinguish among districts already near the top of the scale.</p>
     </div>
     <div class="card" style="--c:#c04b88">
       <h4>Development-Norms Alignment <span class="n">118 districts · 16.7% · prosperous and egalitarian</span></h4>
-      <p>Comfortably above average on development <em>and</em> on rejecting violence against women. The combination most people imagine "doing well" looks like — and it shows up in some surprising states.</p>
+      <p>Comfortably above average on development <em>and</em> on rejecting violence against women. The combination most people imagine "doing well" looks like and it shows up in some surprising states.</p>
     </div>
     <div class="card" style="--c:#883737">
       <h4>Intermediate Transition <span class="n">214 districts · 30.3% · attitudes ahead of incomes</span></h4>
-      <p>Still developing economically, yet noticeably progressive on gender norms — more so than their schooling and wealth would predict. Proof that attitudes can run ahead of the balance sheet.</p>
+      <p>Still developing economically, yet relatively more progressive on gender norms, more so than their schooling and wealth would predict. Proof that attitudes can run different from core variables.</p>
     </div>
     <div class="card" style="--c:#6e4724">
       <h4>Patriarchal Core <span class="n">125 districts · 17.7% · developed, yet traditional on this measure</span></h4>
-      <p>Middling-to-strong on development, but the lowest scores on the norms question of any cluster — and overwhelmingly southern. The single most counter-intuitive group, and the one where the norms caveat above matters most (more on this below).</p>
+      <p>Middling-to-strong on development, but the lowest scores on the norms question of any cluster and overwhelmingly southern, a rather counter-intuitive group, and the one where the norms caveat above matters most (more on this below).</p>
     </div>
     <div class="card" style="--c:#3D1A6C">
       <h4>Low-Resource Progressives <span class="n">227 districts · 32.1% · the largest group · the development climb</span></h4>
-      <p>The least developed cluster — lowest on schooling, wealth, and information — and the largest. Its norms, notably, sit around the middle, not at the bottom. The challenge here is opportunity, not attitudes.</p>
+      <p>The least developed cluster, lowest on schooling, wealth, and information. Its norms, notably, sit around the middle, not at the bottom. The challenge here is opportunity, not attitudes.</p>
     </div>
   </div>
 
@@ -261,59 +261,50 @@
   </figure>
 
   <h2><span class="k">02 — A fair question</span>Why five groups, and not four?</h2>
-  <p>An honest admission: by the usual statistical yardstick, three clusters separate the districts a touch more cleanly than five (silhouette 0.45 vs 0.39). Four clusters don't even manage that — they score marginally <em>below</em> five (0.385 vs 0.389). So why five, and why not three?</p>
-  <p>Because going from four to five didn't <em>reshuffle</em> anything. The four big groups stayed put; the fifth simply peeled off a small, distinctive cluster — <em>Development Frontier</em>, those 23 most-developed districts — that had been folded into a broader "developed" group at four. Statistically it's optional. Substantively it was too interesting to merge back: a tiny band of front-running districts is exactly the kind of pocket this whole exercise set out to find.</p>
+  <p>An honest admission: by the usual statistical rule three clusters separate the districts a touch more cleanly than five (silhouette 0.45 vs 0.39). Four clusters don't even manage that, they score marginally <em>below</em> five (0.385 vs 0.389). So why five, and why not three?</p>
+  <p>Because going from four to five didn't <em>reshuffle</em> anything. The four big groups stayed put; the fifth simply peeled off a small, distinctive cluster: <em>Development Frontier</em>, those 23 most-developed districts that would have been folded into a broader "developed" group at four. Statistically it's optional. Substantively, it was too interesting to merge back: a tiny band of front-running districts is exactly the kind of pocket this whole exercise set out to find.</p>
 
   <details class="method">
     <summary><span class="tag">Method</span> What "didn't reshuffle" means, precisely <span class="chev">›</span></summary>
     <div class="mbody">
-      <p>Cross-tabulating the four-cluster and five-cluster solutions shows the fifth group is carved almost entirely out of one existing cluster, while the other groups map across nearly one-to-one. The internal separation score (silhouette) is highest at three clusters and declines gently as you add more — so five is a deliberate, disclosed choice in favour of an interesting small group, not a number the statistics handed us. Figure 4 shows this as a merge tree, built directly from the cluster centroids rather than drawn by hand: whichever cluster sits on its own branch and joins last is the one the data treats as most distinctive.</p>
+      <p>Cross-tabulating the four-cluster and five-cluster solutions shows the fifth group is carved almost entirely out of one existing cluster, while the other groups map across nearly one-to-one. The internal separation score (silhouette) is highest at three clusters and declines gently as you add more. so five is a deliberate choice, disclosed choice in favour of an interesting small group, not a number the statistics handed us. Figure 4 shows this as a merge tree, built directly from the cluster centroids rather than drawn by hand: whichever cluster sits on its own branch and joins last is the one the data treats as most distinctive.</p>
     </div>
   </details>
 
-  <figure>
-     <img src="Five%20Indias%20Article%20(1)/figures/fig4_why_five.png"
-       alt="Dendrogram showing the merge order of the five cluster centroids"
-       style="width:100%;height:auto;display:block;">
-    <figcaption>FIG. 4 — A merge tree of the five clusters. Development Frontier sit on their own branch and join last — the visual signature of a small group worth keeping separate.</figcaption>
-  </figure>
-
   <h2><span class="k">03 — The geography</span>Which states fall where</h2>
-  <p>This is where the opening hunch pays off. None of the five Indias is a single state — every cluster is a blend, and several land far from their stereotype.</p>
+  <p>This is where the opening hunch pays off. None of the five Indias is a single state and every cluster is a blend, and several land far from their stereotype.</p>
 
   <h3>Development Frontier</h3>
-  <p>Concentrated in the coastal and metropolitan South and a few Northeastern pockets — <em>Kerala, Karnataka, Goa, Mizoram, Tamil Nadu, Puducherry</em>. The familiar high-development names, here distilled to their strongest districts.</p>
+  <p>Concentrated in the coastal and metropolitan South and a few Northeastern pockets: <em>Kerala, Karnataka, Goa, Mizoram, Tamil Nadu, Puducherry</em>. The familiar high-development names, here distilled to their strongest districts.</p>
 
   <h3>Development-Norms Alignment</h3>
-  <p>A prosperous north-and-west belt — <em>Maharashtra, Punjab, Haryana, Himachal Pradesh, Delhi, Gujarat</em>. Note the surprise: <em>Haryana</em>, a state with a hard reputation on women's status, contributes districts to the most balanced cluster of all. Exactly the within-state pocket the stereotype hides.</p>
+  <p>A prosperous north-and-west belt: <em>Maharashtra, Punjab, Haryana, Himachal Pradesh, Delhi, Gujarat</em>. Note the surprise: <em>Haryana</em>, a state with a hard reputation on women's status, Still, these clusters are based on only four indicators and should be interpreted as a simple typology of relative performance, not a complete assessment of women's status.</p>
 
   <h3>Intermediate Transition</h3>
-  <p>Much of the central belt — <em>Uttar Pradesh, Madhya Pradesh, Chhattisgarh</em>, plus parts of <em>Maharashtra, Gujarat and Assam</em>. Districts that aren't wealthy, but whose attitudes on the norms question sit ahead of where their development would place them.</p>
+  <p>Much of the central belt: <em>Uttar Pradesh, Madhya Pradesh, Chhattisgarh</em>, plus parts of <em>Maharashtra, Gujarat and Assam</em>. Districts that aren't wealthy, but whose attitudes on the norms question sit ahead of where their development would place them.</p>
 
   <h3>Patriarchal Core</h3>
-  <p>The South again, but a different face of it — <em>Tamil Nadu, Karnataka, Telangana, Andhra Pradesh</em>. These are not poor districts; they simply score lowest on the wife-beating-justification question. That's a genuinely odd result, and the reason the norms caveat sits so early in this piece — the measure runs against development here in a way that's well documented and not fully understood (see the limitations below).</p>
+  <p>The South again, but a different face of it: <em>Tamil Nadu, Karnataka, Telangana, Andhra Pradesh</em>. These are not poor districts; they simply score lowest on the wife-beating-justification question. That's a genuinely odd result, and the reason the norms caveat sits so early in this piece, the measure runs against development here in a way that's well documented and not fully understood (see the limitations below).</p>
 
   <h3>Low-Resource Progressives</h3>
-  <p>The classic low-development core — <em>Uttar Pradesh, Bihar, Rajasthan, Madhya Pradesh, Chhattisgarh, Jharkhand</em>. The plains states that anchor most development gaps — though, again, their norms scores are middling rather than worst, which is its own quiet correction to the stereotype.</p>
+  <p>The classic low-development core: <em>Uttar Pradesh, Bihar, Rajasthan, Madhya Pradesh, Chhattisgarh, Jharkhand</em>. The plains states that anchor most development gaps — though, again, their norms scores are middling rather than worst, which is its own quiet correction to the stereotype.</p>
 
   <p>Put together, the picture is the one the opening predicted: the South splits into front-runners and a paradox; the Hindi belt splits into the merely-poor and the quietly-progressive; and supposedly-restrictive states turn up inside the most balanced cluster. Two Indias could never hold all of that.</p>
 
   <h2><span class="k">04 — The pattern</span>Development and norms part ways</h2>
-  <p>Strip everything back and one finding survives: a district's development tells you surprisingly little about its gender norms. Plot the two against each other and they barely line up — which is the entire reason five groups exist instead of a single rich-to-poor gradient.</p>
+  <p>Strip everything back and one finding survives: a district's development tells you surprisingly little about its gender norms. Plot the two against each other and they barely line up, which is the entire reason five groups exist instead of a single rich-to-poor gradient.</p>
 
   <figure>
     <img src="Five%20Indias%20Article%20(1)/figures/fig5_decoupling.png"
        alt="Scatter plot of development against gender norms, coloured by cluster"
        style="width:100%;height:auto;display:block;">
-    <figcaption>FIG. 5 — Each dot is a district: development on one axis, the norms measure on the other. If the two moved together the cloud would form a diagonal. It doesn't — and that gap is the story.</figcaption>
+    <figcaption>FIG. 5 — Each dot is a district: development on one axis, the norms measure on the other. If the two moved together the cloud would form a diagonal. It doesn't and that gap is the story.</figcaption>
   </figure>
 
-  <p>That said — and to keep norms in its place — this is a statement about <em>relative</em> positions on one imperfect measure, not a verdict on any state's culture. The honest, useful version of the finding is modest: prosperity and women's status are loosely coupled at best, so policy that assumes "grow the economy and equality will follow" is leaning on an assumption the district data doesn't support.</p>
+  <p>That said, and to keep norms in its place. this is still a statement about <em>relative</em> positions on one imperfect measure, not a verdict on any state's culture. The honest, useful version of the finding is modest: prosperity and women's status are loosely coupled at best, so policy that assumes "grow the economy and equality will follow" is leaning on an assumption the district data doesn't support.</p>
 
-  <div class="pull">The five Indias aren't five income brackets. They're five different ways development and women's status combine — and they don't combine the way the headlines assume.</div>
-
-  <h2><span class="k">05 — How it was built</span>The method, in drawers</h2>
-  <p>The essentials, for anyone who wants them. Skip freely — the story above stands without opening a single one.</p>
+  <h2><span class="k">05 — How it was built</span>The method</h2>
+  <p>The essentials, for anyone who's interested. </p>
 
   <details class="method">
     <summary><span class="tag">Method</span> The four ingredients, exactly <span class="chev">›</span></summary>
@@ -324,7 +315,7 @@
         <li><strong>Newspaper</strong> — share reading a newspaper at least weekly (<code>v157 ≥ 2</code>), a proxy for information access.</li>
         <li><strong>Norms</strong> — share rejecting <em>every</em> listed justification for wife-beating (<code>v744a–e</code> all 0), from the domestic-violence sub-sample, weighted by <code>d005</code>.</li>
       </ul>
-      <p>The first three are weighted by the full-sample weight <code>v005</code>; norms by its own module weight, on fewer respondents — which is exactly why it's treated as the soft, relative axis throughout.</p>
+      <p>The first three are weighted by the full-sample weight <code>v005</code>; norms by its own module weight, on fewer respondents which is exactly why it's treated as the soft, relative axis throughout.</p>
     </div>
   </details>
 
@@ -337,8 +328,8 @@
     </div>
   </details>
 
-  <h2><span class="k">06 — Look it up</span>Every district</h2>
-  <p>Search or filter the full set below. (A note on counts: the clustering runs on 707 NFHS survey units; this table lists the administrative districts they map onto, so the row count is larger, and a few districts couldn't be matched and show as "Not classified.")</p>
+  <h2><span class="k">06 — Look it up</span>Every district (Mostly)</h2>
+  <p>Search or filter the full set below. Treat this as a thought experiment rather than a verdict. The typology is built from a small set of indicators and could certainly be refined. Still, it offers one way of looking at the geography of women's status in India. Search for your district and see whether the result rings true, partially true, or completely off the mark.  (A few districts couldn't be matched and show as "Not classified.")</p>
 
   <div class="table-tool">
     <div class="tc">
