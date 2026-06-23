@@ -12,7 +12,7 @@
 <meta property="og:description" content="How development and gender norms diverge across 707 Indian districts.">
 <meta property="og:image" content="five_indias_preview.svg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The Fivjuse Indias of Women's Status">
+<meta name="twitter:title" content="The Five Indias of Women's Status">
 <meta name="twitter:image" content="five_indias_preview.svg">
 
 <!-- favicon copied from article.html -->
@@ -23,102 +23,119 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-   :root{
+  :root{
     --paper:#f2ede1; --paper-deep:#e9e2d1; --ink:#1b2a3a; --ink-soft:#41566b;
     --rule:#c9bfa8; --oxblood:#8c2f24; --plot:#2d4a63; --green:#4f7a5e;
-    --gridline:rgba(120,105,75,0.13); --read:700px; --wide:1080px;
+    --gridline:rgba(120,105,75,0.13); --max:1180px;
+    --plum:#8c2f24; --rose:#c1577d; --panel:#e9e2d1; --read:700px; --wide:1080px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    background:var(--paper);color:var(--ink);font-family:"Newsreader",Georgia,serif;
+    background:var(--paper);color:var(--ink);font-family:"Newsreader",Georgia,serif;font-size:19px;line-height:1.62;
     background-image:linear-gradient(var(--gridline) 1px,transparent 1px),linear-gradient(90deg,var(--gridline) 1px,transparent 1px);
     background-size:30px 30px;-webkit-font-smoothing:antialiased;
   }
-  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
   .mono{font-family:"IBM Plex Mono",monospace}
   a{color:inherit;text-decoration:none}
-  h1,h2,h3{font-family:"Fraunces",serif;font-weight:500;line-height:1.05;letter-spacing:-0.015em}
-
+  h1,h2,h3,h4{font-family:"Fraunces",serif;font-weight:500;line-height:1.06;letter-spacing:-0.015em}
+  /* ---- header (Lahchen house) ---- */
   header{position:sticky;top:0;z-index:50;background:rgba(242,237,225,0.88);backdrop-filter:blur(7px);border-bottom:1px solid var(--rule)}
   .nav-inner{display:flex;justify-content:space-between;align-items:baseline;max-width:var(--wide);margin:0 auto;padding:15px 30px}
   .brand{font-family:"Fraunces",serif;font-weight:700;font-size:21px;letter-spacing:-0.02em}
   .nav-links{display:flex;gap:24px}
   .nav-links a{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink-soft);padding-bottom:2px;border-bottom:1px solid transparent;transition:.2s}
-  .nav-links a:hover,.nav-links a.active{color:var(--oxblood);border-color:var(--oxblood)}
+  .nav-links a:hover,.nav-links a.active{color:var(--plum);border-color:var(--plum)}
 
-  .ahead{max-width:var(--read);margin:0 auto;padding:60px 24px 10px}
-  .ahead .tags{display:flex;gap:8px;margin-bottom:20px}
-  .ahead .tags span{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--paper);background:var(--ink);padding:3px 8px;border-radius:2px}
-  .ahead .tags span.ox{background:var(--oxblood)}
-  .ahead h1{font-size:clamp(34px,5.4vw,58px);font-weight:600;line-height:1.04}
-  .ahead .standfirst{margin-top:20px;font-size:22px;line-height:1.5;color:var(--ink-soft);font-style:italic}
-  .ahead .byline{margin-top:24px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);letter-spacing:0.05em;display:flex;gap:12px}
-  .ahead .byline .s{color:var(--rule)}
+  /* ---- masthead ---- */
+  .ahead{max-width:var(--read);margin:0 auto;padding:62px 24px 8px}
+  .ahead .tags{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}
+  .ahead .tags span{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--plum);border:1px solid var(--rule);padding:5px 9px;border-radius:2px}
+  .ahead h1{font-size:clamp(38px,6.4vw,62px);font-weight:600;margin-bottom:16px}
+  .ahead .standfirst{font-family:"Newsreader",serif;font-style:italic;font-size:clamp(19px,2.4vw,23px);color:var(--ink-soft);line-height:1.45;max-width:40ch}
+  .ahead .byline{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:12px 0;margin:30px 0 0;display:flex;gap:24px;flex-wrap:wrap}
 
-  .abstract{max-width:var(--read);margin:0 auto;padding:14px 24px 6px}
-  .abstract p{font-size:19.5px;line-height:1.7;color:#222e3c;margin:16px 0}
-  .abstract p:first-child{font-size:21px}
-  .abstract .who{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-soft);vertical-align:super}
+  /* ---- body ---- */
+  article{max-width:var(--read);margin:0 auto;padding:10px 24px 40px}
+  article p{margin:0 0 22px}
+  .lede::first-letter{font-family:"Fraunces",serif;font-size:64px;float:left;line-height:0.8;padding:8px 10px 0 0;font-weight:600;color:var(--plum)}
+  h2{font-size:30px;margin:60px 0 10px;padding-top:20px;border-top:2px solid var(--ink)}
+  h2 .k{display:block;font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:500;letter-spacing:0.1em;color:var(--plum);margin-bottom:8px}
+  h3{font-size:22px;margin:34px 0 10px}
+  em{color:var(--plum);font-style:italic}
 
-  .figure{max-width:var(--wide);margin:30px auto;padding:0 24px}
-  .figure figure{border:1px solid var(--ink);background:var(--paper-deep);box-shadow:8px 8px 0 rgba(27,42,58,0.10)}
-  .figure img{display:block;width:100%;height:auto}
-  .figure figcaption{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-soft);padding:11px 16px;border-top:1px solid var(--rule);letter-spacing:0.04em}
+  .pull{font-family:"Fraunces",serif;font-size:25px;font-weight:500;font-style:italic;color:var(--plum);border-left:4px solid var(--rose);padding:6px 0 6px 22px;margin:38px 0;line-height:1.25}
 
-  .read{max-width:var(--read);margin:0 auto;padding:28px 24px 6px}
-  .read h2{font-size:28px;font-weight:600;margin:42px 0 4px}
-  .read h2 .num{font-family:"IBM Plex Mono",monospace;font-size:14px;color:var(--oxblood);margin-right:12px;font-weight:500}
-  .read p{font-size:19.5px;line-height:1.68;color:#222e3c;margin:16px 0}
-  .read p a{color:var(--oxblood);border-bottom:1px solid var(--rule)}
-  .read .pull{font-family:"Fraunces",serif;font-weight:500;font-size:26px;line-height:1.3;color:var(--ink);border-left:3px solid var(--oxblood);padding-left:22px;margin:34px 0;font-style:italic}
+  /* ---- figure slots (replace with hosted <img>) ---- */
+  figure{margin:38px 0}
+  figure img{width:100%;display:block;border:1px solid var(--rule)}
+  .fig-slot{width:100%;aspect-ratio:3/2;border:2px dashed var(--plum);background:var(--panel);
+    display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;border-radius:3px}
+  .fig-slot[data-fig]::before{content:attr(data-fig);font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--plum);line-height:1.7;letter-spacing:0.03em}
+  .fig-slot.map{aspect-ratio:5/6}
+  figcaption{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);margin-top:10px;line-height:1.55}
 
-  .note{max-width:var(--read);margin:32px auto;padding:0 24px}
-  .note .inner{background:var(--paper-deep);border:1px solid var(--ink);padding:20px 24px}
-  .note .lbl{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--oxblood);margin-bottom:8px}
-  .note p{font-size:16px;line-height:1.6;color:var(--ink-soft);margin:0}
+  /* ---- cluster cards ---- */
+  .cards{margin:28px 0}
+  .card{border-left:8px solid var(--c,var(--rose));background:var(--panel);padding:16px 22px;margin-bottom:12px}
+  .card h4{font-size:20px;font-weight:600;margin-bottom:5px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+  .card h4 .n{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);font-weight:400}
+  .card p{font-size:16px;margin:0;color:var(--ink)}
 
-  .endmark{max-width:var(--read);margin:0 auto;padding:38px 24px;border-top:1px solid var(--rule)}
-  .endmark .mono{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink-soft)}
-  .endmark a{color:var(--oxblood)}
+  /* ---- callouts ---- */
+  .callout{background:var(--panel);border:1px solid var(--rule);border-left:4px solid var(--plum);padding:20px 24px;margin:34px 0;border-radius:2px}
+  .callout .lbl{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--plum);font-weight:500;display:block;margin-bottom:8px}
+  .callout p{font-size:16px;margin:0 0 10px}.callout p:last-child{margin:0}
+  .callout.flag{border-left-color:var(--rose);background:#f3e3e8}
 
-  footer{border-top:1px solid var(--ink);padding:44px 0 56px;margin-top:14px}
+  /* ---- methodology drawers ---- */
+  details.method{background:var(--panel);border:1px solid var(--rule);border-left:4px solid var(--plum);border-radius:2px;margin:24px 0;overflow:hidden}
+  details.method>summary{cursor:pointer;list-style:none;padding:15px 22px;font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--plum);font-weight:500;display:flex;align-items:center;gap:12px}
+  details.method>summary::-webkit-details-marker{display:none}
+  details.method>summary .tag{font-size:10px;text-transform:uppercase;background:var(--plum);color:var(--paper);padding:3px 8px;border-radius:2px;letter-spacing:0.06em}
+  details.method>summary .chev{margin-left:auto;transition:transform .2s}
+  details.method[open]>summary .chev{transform:rotate(90deg)}
+  details.method[open]>summary{border-bottom:1px solid var(--rule)}
+  .mbody{padding:18px 24px 6px}.mbody p{font-size:15.5px;margin:0 0 14px}
+  .mbody ul{font-size:15.5px;margin:0 0 14px;padding-left:22px}.mbody li{margin-bottom:7px}
+  .mbody code{font-family:"IBM Plex Mono",monospace;font-size:13px;background:var(--paper);padding:1px 5px;border:1px solid var(--rule);border-radius:2px}
+  .mtable{width:100%;border-collapse:collapse;margin:6px 0 16px;font-size:14px}
+  .mtable th,.mtable td{border:1px solid var(--rule);padding:6px 10px;text-align:left}
+  .mtable th{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink-soft);background:var(--paper)}
+  .mtable td.num{font-family:"IBM Plex Mono",monospace}
+  .mtable td.hi{color:var(--plum);font-weight:600;font-family:"IBM Plex Mono",monospace}
+
+  /* ---- interactive table ---- */
+  .table-tool{margin:30px 0;border:1px solid var(--rule);background:var(--panel);border-radius:2px}
+  .tc{padding:15px 16px;border-bottom:1px solid var(--rule);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .tc input{flex:1;min-width:180px;padding:9px 12px;border:1px solid var(--rule);border-radius:2px;font-family:"Newsreader",serif;font-size:15px;background:var(--paper);color:var(--ink)}
+  .tc input:focus{outline:2px solid var(--plum);outline-offset:-1px}
+  .chips{display:flex;gap:6px;flex-wrap:wrap}
+  .chip{font-family:"IBM Plex Mono",monospace;font-size:11px;padding:6px 11px;border:1px solid var(--rule);border-radius:14px;cursor:pointer;color:#fff;white-space:nowrap}
+  .chip[data-on="0"]{background:var(--paper)!important;color:var(--ink-soft)}
+  .ts{max-height:440px;overflow-y:auto}
+  table.ds{width:100%;border-collapse:collapse;font-size:15px}
+  table.ds thead th{position:sticky;top:0;background:var(--ink);color:var(--paper);text-align:left;padding:10px 14px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:0.04em;text-transform:uppercase;cursor:pointer;z-index:2}
+  table.ds thead th:hover{background:var(--plum)}
+  table.ds tbody td{padding:9px 14px;border-bottom:1px solid var(--rule)}
+  table.ds tbody tr:hover{background:#efe6da}
+  .pill{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-family:"IBM Plex Mono",monospace;color:#fff;white-space:nowrap}
+  .tf{padding:10px 16px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);border-top:1px solid var(--rule);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+  /* ---- footer (Lahchen house) ---- */
+  footer{border-top:1px solid var(--ink);padding:44px 0 56px;margin-top:40px}
   .foot-grid{max-width:var(--wide);margin:0 auto;padding:0 30px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:22px}
   footer .big{font-family:"Fraunces",serif;font-size:clamp(24px,3.4vw,34px);font-weight:500;line-height:1.05;max-width:18ch}
-  footer .big em{font-style:italic;color:var(--oxblood)}
+  footer .big em{font-style:italic;color:var(--plum)}
   .links{display:flex;gap:20px}
   .links a{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink-soft);border-bottom:1px solid var(--rule);padding-bottom:2px;transition:.2s}
-  .links a:hover{color:var(--oxblood);border-color:var(--oxblood)}
+  .links a:hover{color:var(--plum);border-color:var(--plum)}
 
-  @media(max-width:760px){
-    .nav-inner{flex-wrap:wrap;gap:6px 0;padding:12px 18px}
-    .nav-links{gap:14px;flex-wrap:wrap}
-    .nav-links a{font-size:11px;letter-spacing:0.05em}
-    /* give figures more width and a lighter shadow so nothing clips off-screen */
-    .figure{padding:0 12px;margin:22px auto}
-    .figure figure{box-shadow:4px 4px 0 rgba(27,42,58,0.10)}
-    .figure figcaption{font-size:10px;padding:9px 12px;line-height:1.45}
-    /* readable body sizing on small screens */
-    .ahead{padding:42px 18px 8px}
-    .ahead h1{font-size:34px}
-    .ahead .standfirst{font-size:19px}
-    .abstract{padding:10px 18px 4px}
-    .abstract p,.abstract p:first-child{font-size:18px;line-height:1.62}
-    .read{padding:22px 18px 4px}
-    .read p{font-size:18px;line-height:1.62}
-    .read h2{font-size:24px}
-    .read .pull{font-size:21px;padding-left:16px;margin:26px 0}
-    .note{padding:0 18px}
-    .note .inner{padding:16px 18px}
-    .foot-grid{padding:0 18px;flex-direction:column;align-items:flex-start;gap:18px}
-    footer .big{font-size:24px}
-    .endmark{padding:30px 18px}
-    /* shrink the background grid so it isn't busy on a small screen */
-    body{background-size:22px 22px}
-  }
+  .editor-note{max-width:var(--read);margin:18px auto 0;padding:12px 18px;background:#fbf2d9;border:1px dashed #c9a227;border-radius:3px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:#7a5c10;line-height:1.6}
 </style>
 </head>
 <body>
+
 <header>
   <div class="nav-inner">
     <a href="index.html" class="brand">Lahchen Maps</a>
@@ -131,16 +148,17 @@
   </div>
 </header>
 
-<article>
-  <div class="ahead">
-    <div class="tags"><span class="ox">Machine Learning</span><span>Districts</span><span>NFHS-5</span></div>
-    <h1>Where a Child Lives</h1>
-    <p class="standfirst">State averages hide as much as they reveal. I let the data sort 707 districts on their own with a simple machine learning exercise, and the "two Indias" quietly became five, with development and women's status refusing to travel together.</p>
-    <div class="byline"><span>Nehchal Singh</span><span class="s">·</span><span>2026</span><span class="s">·</span><span>10 min</span></div>
-  </div>
+
+<div class="ahead">
+  <div class="tags"><span class ="ox">Machine Learning</span><span>NFHS-5</span><span>707 Districts</span><span>India</span></div>
+  <h1>The Five Indias of Women's Status</h1>
+  <p class="standfirst">State averages hide as much as they reveal.I let the data sort 707 districts on their own with a simple machine learning exercise, and the "two Indias" quietly became five, with development and women's status refusing to travel together.</p>
   
-<div class="abstract">
-  <p>In a widely shared monologue, Vir Das described two Indias living inside the same country- one of progress, one of constraint, somehow sharing an address. It landed because most of us have felt it: opportunity and limitation sitting side by side, often on the same street.</p>
+</div>
+
+<article>
+
+  <pIn a widely shared monologue, Vir Das described two Indias living inside the same country- one of progress, one of constraint, somehow sharing an address. It landed because most of us have felt it: opportunity and limitation sitting side by side, often on the same street.</p>
 
   <p>Conversations about women in India tend to run along the same lines. Haryana carries a reputation for restrictive norms and thin female agency; Kerala, Goa, and parts of the Northeast get cast as gentler places to be a woman. These shorthand maps are useful but they flatten a much messier reality.</p>
 
@@ -151,8 +169,7 @@
   <p>The result isn't two Indias. It's five. And the more interesting part is what the grouping exposes: <em>development and gender norms don't always move together.</em> Some districts are comparatively prosperous yet socially conservative; others are poor but more progressive. Before any of the method, here's the map those five groups make.</p>
 
   <!-- MAP EARLY -->
-<div class="figure">
-<figure>
+  <figure>
   <img src="Five%20Indias%20Article%20(1)/figures/fig1_map.png"
        alt="Map of India's districts coloured by the five clusters"
        style="width:100%;height:auto;display:block;">
@@ -160,7 +177,6 @@
     FIG. 1 — Every district, coloured by the cluster it falls into.
   </figcaption>
 </figure>
-</div>
 
   <p>Once the map is viewed through regional rather than state boundaries, the anomalies begin to glow. Prosperous, progressive districts emerge inside states known for conservatism, while conservative enclaves linger inside places celebrated for social progress.</p>
 
@@ -374,5 +390,4 @@ function render(){
 render();
 </script>
 </body>
-</div>
 </html>
